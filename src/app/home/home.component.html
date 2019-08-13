@@ -1,0 +1,19 @@
+<div class="courses-panel">
+  <h3>Todos los libros</h3>
+  <mat-tab-group>
+    <mat-tab label="First">
+      <ul>
+        <li *ngFor="let l1 of lista1$ | async" (click)="toBooksComponent(l1.id)">{{l1.nombre}}</li>
+      </ul>
+    </mat-tab>
+    <mat-tab label="Second">
+      <ul>
+        <li *ngFor="let l2 of lista2$ | async" (click)="toBooksComponent(l2.id)">{{l2.nombre}}</li>
+      </ul>
+    </mat-tab>
+  </mat-tab-group>
+</div>
+
+<div *ngIf="show">
+  <app-books [bookId]="bookIdInput"></app-books>
+</div>

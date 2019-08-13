@@ -1,0 +1,25 @@
+<div *ngIf="book$ | async as book">
+  <h1>{{book?.nombre}}</h1>
+  <p>{{book?.descripcion}}</p>
+</div>
+
+<div>
+  <input type="text" placeholder="Escribe tu búsqueda" #searhInput>
+</div>
+
+<div *ngIf="books$ | async as books">
+  <table>
+    <thead>
+      <th>Nombre</th>
+      <th>Descripción</th>
+      <th>Autor</th>
+    </thead>
+
+    <tr *ngFor="let libro of books">
+      <td>{{libro.nombre}}</td>
+      <td>{{libro.descripcion}}</td>
+      <td>{{libro.autor}}</td>
+    </tr>
+
+  </table>
+</div>
